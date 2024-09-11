@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include "class.h"
-#include "error.h"
+#include "func.h"
 using namespace std;
 int main()
 {
@@ -54,31 +54,11 @@ int main()
     case 2:
     {
         pg.inputVal(); // calls the inputVal function of packedGroceries
-        ofstream outFile("inputval.txt", ios::app);
-        if (outFile.is_open())
-        {
-            outFile << "input to file"<< endl; 
-            outFile.close();
-        }
-        else
-        {
-            cout << "Unable to open file" << endl;
-        }
         break;
     }
     case 3:
     {
         fg.inputVal(); // calls the inputVal function of freshGroceries
-        ofstream outFile("inputval.txt", ios::app);
-        if (outFile.is_open())
-        {
-            outFile << "Fresh Groceries input value" << endl; // Replace with actual value
-            outFile.close();
-        }
-        else
-        {
-            cout << "Unable to open file" << endl;
-        }
         break;
     }
     default:

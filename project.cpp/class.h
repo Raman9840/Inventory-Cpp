@@ -23,10 +23,25 @@ class packedGroceries:public item{
         item::inputVal();
         cout << "Enter Quantity: ";
         cin >> quantity;
-        cout << "Enter Quantity Purchased: ";
-        cin >> quantityPurchased;
         cout << "Enter Price: ";
         cin >> price;
+    }
+
+    void writeVal(){
+        ofstream outFile("packedGroceries.txt", ios::app);
+        if (outFile.is_open())
+        {
+            outFile << "Item Name: " << itemName << endl;
+            outFile << "Item Code: " << itemCode << endl;
+            outFile << "Quantity: " << quantity << endl;
+            outFile << "Price: " << price << endl;
+            outFile << "--------------------------" << endl;
+            outFile.close();
+        }
+        else
+        {
+            cout << "Unable to open file" << endl;
+        }
     }
 };
 class freshGroceries: public item{
@@ -38,9 +53,23 @@ class freshGroceries: public item{
         item::inputVal();
         cout << "Enter Quantity: ";
         cin >> quantity;
-        cout << "Enter Quantity Purchased: ";
-        cin >> quantityPurchased;
         cout << "Enter Price: ";
         cin >> price;
+    }
+    void writeVal(){
+        ofstream outFile("freshGroceries.txt", ios::app);
+        if (outFile.is_open())
+        {
+            outFile << "Item Name: " << itemName << endl;
+            outFile << "Item Code: " << itemCode << endl;
+            outFile << "Quantity: " << quantity << endl;
+            outFile << "Price: " << price << endl;
+            outFile << "--------------------------" << endl;
+            outFile.close();
+        }
+        else
+        {
+            cout << "Unable to open file" << endl;
+        }
     }
 };
